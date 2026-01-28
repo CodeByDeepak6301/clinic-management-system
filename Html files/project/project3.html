@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood Quotes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #fef7e5;
+      padding-top: 50px;
+    }
+    .mood-btn {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #fff3cd;
+      transition: transform 0.2s;
+    }
+    .mood-btn:hover {
+      transform: scale(1.1);
+    }
+    #quote-box {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      padding: 20px;
+      background-color: #fffbea;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 60%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mood chuno aur ek inspiring line lo ✨</h2>
+
+  <button class="mood-btn" onclick="showQuote()">😄</button>
+  <button class="mood-btn" onclick="showQuote()">😔</button>
+  <button class="mood-btn" onclick="showQuote()">😠</button>
+  <button class="mood-btn" onclick="showQuote()">😌</button>
+
+  <div id="quote-box"></div>
+
+  <script>
+    const quotes = [
+      "Har din ek naya mauka hai shuruwaat ka.",
+      "Khud pe bharosa rakho — tum zyada takatwar ho jitna sochte ho.",
+      "Aaj mushkil hai, kal aur better hoga.",
+      "Shaanti andar se aati hai, dhoondo toh milegi.",
+      "Chhoti chhoti khushiyan bhi badi hoti hain.",
+    ];
+
+    function showQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+      document.getElementById('quote-box').textContent = quote;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood Select kro</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      padding-top: 50px;
+    }
+    .mood-btn {
+      font-size: 2rem;
+      padding: 15px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .mood-btn:hover {
+      transform: scale(1.2);
+    }
+    #selected-mood {
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Aaj ka mood batao 😄</h2>
+
+  <button class="mood-btn" onclick="selectMood('😄 Khush')">😄</button>
+  <button class="mood-btn" onclick="selectMood('😔 Udaas')">😔</button>
+  <button class="mood-btn" onclick="selectMood('😠 Gussa')">😠</button>
+  <button class="mood-btn" onclick="selectMood('😌 Shaant')">😌</button>
+
+  <div id="selected-mood"></div>
+
+  <script>
+    function selectMood(mood) {
+      document.getElementById('selected-mood').textContent = "Tumhara mood hai: " + mood;
+    }
+  </script>
+
+</body>
+</html>
+</body>
+</html>

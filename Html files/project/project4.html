@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood Saver</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      padding-top: 50px;
+    }
+    .mood-btn {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #d0e6ff;
+      transition: transform 0.2s;
+    }
+    .mood-btn:hover {
+      transform: scale(1.1);
+    }
+    #mood-display {
+      margin-top: 30px;
+      font-size: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Apna mood choose karo 😊</h2>
+
+  <button class="mood-btn" onclick="saveMood('😄 Khush')">😄</button>
+  <button class="mood-btn" onclick="saveMood('😔 Udaas')">😔</button>
+  <button class="mood-btn" onclick="saveMood('😠 Gussa')">😠</button>
+  <button class="mood-btn" onclick="saveMood('😌 Shaant')">😌</button>
+
+  <div id="mood-display"></div>
+
+  <script>
+    // Mood display on page load
+    window.onload = function() {
+      const savedMood = localStorage.getItem("todayMood");
+      if (savedMood) {
+        document.getElementById("mood-display").textContent = "Pichla mood tha: " + savedMood;
+      }
+    };
+
+    // Save mood to local storage
+    function saveMood(mood) {
+      const today = new Date().toDateString(); // Unique per day
+      localStorage.setItem("todayMood", mood + " - " + today);
+      document.getElementById("mood-display").textContent = "Mood save ho gaya: " + mood;
+    }
+  </script>
+
+</body>
+</html>
+

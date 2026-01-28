@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Booking</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f4f4f4, #e9ecef);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #0a9396;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ee9b00;
+        }
+
+        /* Booking Form Section */
+        .booking-section {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0a9396;
+            font-size: 1.8rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #0a9396;
+            box-shadow: 0 0 8px rgba(10,147,150,0.3);
+            outline: none;
+        }
+
+        button {
+            background: #ee9b00;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #ca6702;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a9396;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EV Recharge Bunk</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="booking.html">Booking</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="booking-section">
+        <h2>⚡ EV Charging Slot Booking</h2>
+        <form onsubmit="return bookSlot()">
+            <input type="text" id="Name" placeholder="Your Full Name" required>
+            <input type="text" id="Vehicle" placeholder="Vehicle Number" required>
+            <input type="date" id="Date" required>
+            <input type="time" id="Time" required>
+            <button type="submit">Book Slot</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EV Recharge Bunk | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function bookSlot() {
+            alert("✅ Your EV charging slot has been booked successfully!");
+            return false; // prevent actual form submission for demo
+        }
+    </script>
+</body>
+</html>

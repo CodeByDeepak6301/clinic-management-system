@@ -1,0 +1,133 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f4f4f4, #e9ecef);
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #0a9396;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    color: #ee9b00;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1617814076820-6f3a2e7d9d3b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+    animation: fadeIn 1.2s ease-in-out;
+    position: relative;
+}
+
+/* Overlay effect for stylish look */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10,147,150,0.5);
+    z-index: 0;
+}
+
+.hero h2, .hero p, .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+.btn {
+    background: #ee9b00;
+    color: #fff;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    background: #ca6702;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #0a9396;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 0.95rem;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

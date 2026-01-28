@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointments | Clinic Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .doctor-list {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .doctor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    .doctor:last-child {
+      border-bottom: none;
+    }
+    .doctor h3 {
+      margin: 0;
+      color: #004a99;
+    }
+    .doctor span {
+      font-weight: 600;
+      color: #333;
+    }
+    .btn {
+      padding: 8px 15px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background: #004a99;
+    }
+    .confirmation {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #e6f2ff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+    .confirmation h3 {
+      color: #004a99;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Available Doctors</h2>
+  </header>
+
+  <div class="doctor-list">
+    <div class="doctor">
+      <h3>Dr. Ramesh Kumar (Cardiologist)</h3>
+      <span>₹800</span>
+      <button class="btn" onclick="bookAppointment('Dr. Ramesh Kumar')">Book Appointment</button>
+    </div>
+    <div class="doctor">
+      <h3>Dr. Priya Sharma (Dermatologist)</h3>
+      <span>₹600</span>
+      <button class="btn" onclick="bookAppointment('Dr. Priya Sharma')">Book Appointment</button>
+    </div>
+    <div class="doctor">
+      <h3>Dr. Anil Verma (Orthopedic)</h3>
+      <span>₹700</span>
+      <button class="btn" onclick="bookAppointment('Dr. Anil Verma')">Book Appointment</button>
+    </div>
+    <div class="doctor">
+      <h3>Dr. Neha Gupta (Pediatrician)</h3>
+      <span>₹500</span>
+      <button class="btn" onclick="bookAppointment('Dr. Neha Gupta')">Book Appointment</button>
+    </div>
+  </div>
+
+  <!-- Confirmation Section -->
+  <div class="confirmation" id="confirmationBox">
+    <h3>Appointment Confirmed ✅</h3>
+    <p id="doctorName"></p>
+    <p id="tokenNumber"></p>
+  </div>
+
+  <script>
+    function bookAppointment(doctorName) {
+      // Generate random token number (1000-9999)
+      const token = Math.floor(1000 + Math.random() * 9000);
+
+      // Show confirmation box
+      document.getElementById("confirmationBox").style.display = "block";
+      document.getElementById("doctorName").innerText = "Doctor: " + doctorName;
+      document.getElementById("tokenNumber").innerText = "Your Token Number: " + token;
+    }
+  </script>
+</body>
+</html>

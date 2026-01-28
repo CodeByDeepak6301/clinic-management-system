@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height: 150vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      width: 400px;
+      color: #fff;
+    }
+
+    form h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+        input, select, textarea {
+  width: 100%;
+  height: 45px; /* Same height for all */
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+      
+    
+    select {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid #f06292;
+}
+
+option {
+  background-color: #2a5298;
+  color: #ffe082; /* Soft yellow for visibility */
+  font-weight: bold;
+}
+
+    textarea {
+      resize: none;
+    }
+
+    @keyframes glow {
+      from { border-color: #4fc3f7; box-shadow: 0 0 5px #4fc3f7; }
+      to { border-color: #f06292; box-shadow: 0 0 10px #f06292; }
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffff;
+      color: #2a5298;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f06292;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Student Registration</h1>
+
+    <label>First Name:</label>
+    <input type="text" name="first_name" required>
+
+    <label>Last Name:</label>
+    <input type="text" name="last_name" required>
+
+    <label>E-mail:</label>
+    <input type="email" name="email" required>
+
+    <label>Date of Birth:</label>
+    <input type="text" name="dob" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" required>
+
+    <label>Gender:</label>
+    <select name="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label>Father's Name:</label>
+    <input type="text" name="father_name" required>
+
+    <label>Mother's Name:</label>
+    <input type="text" name="mother_name" required>
+
+    <label>Country Code:</label>
+    <select name="country_code">
+      <option value="+91" selected>+91 (India)</option>
+      <option value="+1">+1 (USA)</option>
+      <option value="+44">+44 (UK)</option>
+    </select>
+
+    <label>Mobile No.:</label>
+    <input type="tel" name="mobile" maxlength="10" pattern="\d{10}" placeholder="10-digit mobile number" required>
+
+    <label>Address:</label>
+    <textarea name="address" rows="4" placeholder="Enter your full address here" required></textarea>
+
+    <div class="form-buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+  <script>
+  const sound = document.getElementById("click-sound");
+  const inputs = document.querySelectorAll("input, select, textarea");
+
+  inputs.forEach(input => {
+    input.addEventListener("focus", () => {
+      sound.currentTime = 0; // reset to start
+      sound.play();
+    });
+  });
+</script>
+<audio id="click-sound" src="https://www.myinstants.com/media/sounds/button_click.mp3" preload="auto"></audio>
+</body>
+</html>
